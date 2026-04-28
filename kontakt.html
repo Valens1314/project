@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Penzión Pod Dubom</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigácia -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <svg class="logo-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 5 L15 15 L10 10 L5 20 L10 25 L15 20 L20 30 L25 20 L30 25 L35 20 L30 10 L25 15 Z" fill="currentColor"/>
+                </svg>
+                <span class="logo-text">Pod Dubom</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Domov</a></li>
+                <li><a href="o-nas.html">O nás</a></li>
+                <li><a href="kontakt.html" class="active">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Kontaktujte nás</h1>
+            <p class="page-perex">Máte otázky alebo chcete rezervovať pobyt? Radi vám odpovieme a pomôžeme naplánovať váš dokonalý výlet do Malých Karpát.</p>
+        </div>
+    </section>
+
+    <!-- Kontakt sekcia -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Kontaktný formulár -->
+                <div class="contact-form-wrapper">
+                    <h2>Napíšte nám správu</h2>
+                    <form id="contactForm" class="contact-form" novalidate>
+                        <fieldset class="form-fieldset">
+                            <legend>Osobné údaje</legend>
+                            
+                            <div class="form-group">
+                                <label for="name">
+                                    Meno a priezvisko <span class="required">*</span>
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    name="name" 
+                                    required 
+                                    minlength="3"
+                                    placeholder="Zadajte vaše celé meno"
+                                    autocomplete="name"
+                                >
+                                <span class="invalid-hint">Meno musí obsahovať aspoň 3 znaky</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">
+                                    Email <span class="required">*</span>
+                                </label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    required
+                                    placeholder="vas@email.sk"
+                                    autocomplete="email"
+                                >
+                                <span class="invalid-hint">Zadajte platný email (napr. meno@domena.sk)</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">
+                                    Telefón <span class="required">*</span>
+                                </label>
+                                <input 
+                                    type="tel" 
+                                    id="phone" 
+                                    name="phone" 
+                                    required
+                                    pattern="[+]?[0-9\s]{9,}"
+                                    placeholder="+421 900 123 456"
+                                    autocomplete="tel"
+                                >
+                                <span class="invalid-hint">Zadajte platné telefónne číslo (min. 9 číslic)</span>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form-fieldset">
+                            <legend>Detaily rezervácie</legend>
+
+                            <div class="form-group">
+                                <label for="reason">
+                                    Dôvod kontaktu <span class="required">*</span>
+                                </label>
+                                <select id="reason" name="reason" required>
+                                    <option value="">-- Vyberte možnosť --</option>
+                                    <option value="rezervacia">Rezervácia ubytovania</option>
+                                    <option value="info">Žiadosť o informácie</option>
+                                    <option value="event">Organizácia podujatia</option>
+                                    <option value="other">Iné</option>
+                                </select>
+                                <span class="invalid-hint">Vyberte dôvod kontaktu</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Preferovaný spôsob komunikácie</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="contact-method" value="email" checked>
+                                        <span>Email</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="contact-method" value="phone">
+                                        <span>Telefón</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="contact-method" value="any">
+                                        <span>Ľubovoľný</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">
+                                    Vaša správa <span class="required">*</span>
+                                </label>
+                                <textarea 
+                                    id="message" 
+                                    name="message" 
+                                    rows="6" 
+                                    required
+                                    minlength="10"
+                                    placeholder="Napíšte nám vašu správu alebo otázku..."
+                                ></textarea>
+                                <span class="invalid-hint">Správa musí obsahovať aspoň 10 znakov</span>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input 
+                                        type="checkbox" 
+                                        id="consent" 
+                                        name="consent" 
+                                        required
+                                    >
+                                    <span>
+                                        Súhlasím so spracovaním osobných údajov na účely odpovede na moju správu <span class="required">*</span>
+                                    </span>
+                                </label>
+                                <span class="invalid-hint">Musíte súhlasiť so spracovaním osobných údajov</span>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input 
+                                        type="checkbox" 
+                                        id="newsletter" 
+                                        name="newsletter"
+                                    >
+                                    <span>Chcem dostávať informácie o špeciálnych ponukách a novinkách</span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <button type="submit" class="btn-submit">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                            </svg>
+                            Odoslať správu
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Kontaktné informácie -->
+                <div class="contact-info-wrapper">
+                    <div class="contact-info-card">
+                        <h3>Kontaktné údaje</h3>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="info-content">
+                                <h4>Adresa</h4>
+                                <p>Penzión Pod Dubom<br>Malé Karpaty 123<br>900 28 Malé Karpaty<br>Slovensko</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                            <div class="info-content">
+                                <h4>Telefón</h4>
+                                <p><a href="tel:+421900123456">+421 900 123 456</a><br>
+                                <small>Denne 8:00 - 20:00</small></p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="info-content">
+                                <h4>Email</h4>
+                                <p><a href="mailto:info@poddubom.sk">info@poddubom.sk</a><br>
+                                <small>Odpoveď do 24 hodín</small></p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <div class="info-content">
+                                <h4>Recepcia</h4>
+                                <p>Pondelok - Nedeľa<br>7:00 - 22:00<br>
+                                <small>Check-in od 14:00<br>Check-out do 11:00</small></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-card">
+                        <h3>Ako sa k nám dostať</h3>
+                        <div class="map-placeholder">
+                            <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Mapa pozadie -->
+                                <rect width="400" height="300" fill="#e8efe8"/>
+                                <!-- Cesty -->
+                                <path d="M 50 250 Q 150 200 250 180 T 350 150" stroke="#c5d4c5" stroke-width="15" fill="none"/>
+                                <path d="M 100 50 L 100 250" stroke="#c5d4c5" stroke-width="12" fill="none"/>
+                                <!-- Les -->
+                                <circle cx="280" cy="80" r="30" fill="#7a9b7a" opacity="0.6"/>
+                                <circle cx="310" cy="70" r="25" fill="#7a9b7a" opacity="0.7"/>
+                                <circle cx="300" cy="100" r="28" fill="#7a9b7a" opacity="0.6"/>
+                                <!-- Penzión marker -->
+                                <circle cx="200" cy="160" r="8" fill="#8b4513" stroke="white" stroke-width="2"/>
+                                <path d="M 200 152 L 200 135" stroke="#8b4513" stroke-width="2"/>
+                                <circle cx="200" cy="128" r="6" fill="#d4894a" stroke="#8b4513" stroke-width="1.5"/>
+                            </svg>
+                            <p class="map-label">GPS: 48.3456° N, 17.1234° E</p>
+                        </div>
+                        <div class="directions">
+                            <h4>Doprava</h4>
+                            <ul>
+                                <li><strong>Autom:</strong> 25 km od Bratislavy (cca 30 min)</li>
+                                <li><strong>Vlakom:</strong> Stanica Modra - 5 km (taxi dostupné)</li>
+                                <li><strong>Autobusom:</strong> Linka 640 priamo k penzionu</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast notifikácia -->
+    <div id="toast" class="toast">
+        <div class="toast-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+        </div>
+        <div class="toast-content">
+            <h4 class="toast-title">Správa odoslaná!</h4>
+            <p class="toast-message">Ďakujeme za váš záujem. Odpovieme vám do 24 hodín.</p>
+        </div>
+        <button class="toast-close" aria-label="Zavrieť notifikáciu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Penzión Pod Dubom</h4>
+                    <p>Rodinný penzión v srdci Malých Karpát ponúkajúci autentický slovenský zážitok spojený s prírodou a tradíciou.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Rýchle odkazy</h4>
+                    <ul>
+                        <li><a href="index.html">Domov</a></li>
+                        <li><a href="o-nas.html">O nás</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontakt</h4>
+                    <ul>
+                        <li>Malé Karpaty 123</li>
+                        <li>900 28 Malé Karpaty</li>
+                        <li>+421 900 123 456</li>
+                        <li>info@poddubom.sk</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Penzión Pod Dubom. Všetky práva vyhradené.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
